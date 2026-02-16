@@ -20,18 +20,18 @@ const function_caller_models = {
   "glm-4.7-flash": "workers-ai/@cf/zai-org/glm-4.7-flash", // 131k
   "llama-4-scout-17b-16e-instruct": "workers-ai/@cf/meta/llama-4-scout-17b-16e-instruct", // 131k
   "qwen3-30b-a3b-fp8": "workers-ai/@cf/qwen/qwen3-30b-a3b-fp8" // 32k
-} as const
+}
 
 const normal_models = {
   // function calling disabled
   "gpt-oss-20b": "workers-ai/@cf/openai/gpt-oss-20b",
   "deepseek-r1-distill-qwen-32b": "workers-ai/@cf/deepseek-ai/deepseek-r1-distill-qwen-32b"
-} as const
+}
 
 const models = {
   ...function_caller_models,
   ...normal_models
-} as const
+}
 
 export type ModelWithTools = keyof typeof function_caller_models
 export type ModelWithoutTools = keyof typeof normal_models
